@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<title>Survey</title>
+
+</head>
+
+<body>
+	<div class="container">
+		<h2>Survey Questions</h2>
+		<hr>
+		<h3>Your Profile</h3>
+		<br>
+		<h4>Name (Required)</h4>
+		<input type="text" id="name" class="form-control" required>
+		<br>
+		<h4>Link Your Photo Here (Required)</h4>
+		<input type="text" id="photo" class="form-control" required>
+		<hr>
+		<div class="panel panel-default">
+  	<div class="panel-heading"><h2>Questions</h2></div>
+  	<div class="panel-body">
+			<h3><strong>Question 1</strong></h3>
+			<h4>Your ideal day is spent at a music festival downtown.</h4>
+			<select class="chosen-select" id="q1">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 2</strong></h3>
+			<h4>You prefer cooking at home versus going out to eat.</h4>
+			<select class="chosen-select" id="q2">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 3</strong></h3>
+			<h4>Religion is a big part of your life.</h4>
+			<select class="chosen-select" id="q3">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 4</strong></h3>
+			<h4>You always have pre-made plans for the weekend.</h4>
+			<select class="chosen-select" id="q4">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 5</strong></h3>
+			<h4>You are very close with your family and spend a lot of time with them.</h4>
+			<select class="chosen-select" id="q5">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 6</strong></h3>
+			<h4>Coke over Pepsi.</h4>
+			<select class="chosen-select" id="q6">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 7</strong></h3>
+			<h4>You get irritated with people easily.</h4>
+			<select class="chosen-select" id="q7">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 8</strong></h3>
+			<h4>Having a lot of friends is important to you.</h4>
+			<select class="chosen-select" id="q8">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 9</strong></h3>
+			<h4>The social status of you andyour friends is important to you.</h4>
+			<select class="chosen-select" id="q9">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3><strong>Question 10</strong></h3>
+			<h4>You are a night owl.</h4>
+			<select class="chosen-select" id="q10">
+				<option value="0"></option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<br>
+			<button type="submit" class="btn btn-primary btn-lrg btn-block" id="submit">
+				<i class="fa fa-check-circle" aria-hidden="true">Find Your Match!</i>
+  	</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+     <p>
+       <a href="/api/friends">API Friends List</a>
+        | 
+       <a href="https://github.com/ehubbz/FriendFinder">Github Repo</a>
+     </p>
+   </div>
+	</footer>
+		<div id="results-modal" class="modal-fade" role="dialogue">
+			<div class="modal-dialogue">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"></button>
+						<h2><strong>You Are Most Compatible With...</strong></h2>
+						<div class="modal-body">
+							<h2 id="matchName"></h2>
+							<img id="matchPic" src="LINK TO PIC GOES HERE" alt>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+</body>
