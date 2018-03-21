@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html>
 <html lang="en-us">
-
 <head>
-
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial scale=1.0">
+	<meta name="viewport" content="width=device-width">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  	<script href="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></script>
+  	<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<title>Survey</title>
-
 </head>
 
 <body>
@@ -141,7 +137,7 @@
 			</select>
 			<hr>
 			<br>
-			<button type="submit" class="btn btn-primary btn-lrg btn-block" id="submit">
+			<button type="submit" data-toggle="modal" class="btn btn-primary btn-lrg btn-block" id="getMatch">
 				<i class="fa fa-check-circle" aria-hidden="true">Find Your Match!</i>
   	</div>
 		</div>
@@ -163,15 +159,47 @@
 						<h2><strong>You Are Most Compatible With...</strong></h2>
 						<div class="modal-body">
 							<h2 id="matchName"></h2>
-							<img id="matchPic" src="LINK TO PIC GOES HERE" alt>
+							<img id="matchPic" src="" alt>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 		
+	<script type="text/javascript">
+
+	$(document).ready(function() {
+  	$("#getMatch").on("click", function(event) {
+      event.preventDefault();
+      var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+  		answers: [
+  			$("#q1").val().trim(),
+  			$("#q2").val().trim(),
+  			$("#q3").val().trim(),
+  			$("#q4").val().trim(),
+  			$("#q5").val().trim(),
+  			$("#q6").val().trim(),
+  			$("#q7").val().trim(),
+  			$("#q8").val().trim(),
+  			$("#q9").val().trim(),
+  			$("#q10").val().trim()
+  		]
+    };
+
+  	$.post("/api/friends", newFriend)
+  	.done(function(data) {
+  		$("#matchName").text(data.name);
+  		$("#matchPic").attr("src", data.photo);
+  		$("#results-modal").modal("open");
+  	}); 
+ }); 
+});
+	</script>
 </body>
+</html>
+
