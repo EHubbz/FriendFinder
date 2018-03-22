@@ -7,26 +7,31 @@ module.exports = function(app) {
     res.json(friendData);
   });
 
-app.post("/api/friends", function(req, res) {
+ app.post("/api/friends", function(req, res) {
     var newFriend = req.body;
-    var userScores = newFriend.answers
+    var userAnswers = newFriend.answers;
+ });
+
+app.post("/api/friends", function(req, res) {
+    var match = req.body;
+    var userScores = match.answers
     var matchName = "";
     var matchPic = "";
     var totalDifference = 100;
 
-    for (var i = 0; i < friendData.length; i++) {
+    for (var i = 0; i < friends.length; i++) {
     	var diff = 0;
     	for (var j = 0; j < userScores.length; j++) {
-    		diff += Math.abs(friendData[i].answers[j] - userScores[j]);
+    		diff += Math.abs(friends[i].answers[j] - userScores[j]);
     	} 
     if (diff < totalDifference) {
     	totalDifference = diff;
-    	matchName = friendData[i].name;
-    	matchPic = friendData[i].photo;
+    	matchName = friends[i].name;
+    	matchPic = friends[i].photo;
     }
    }
 
-  friends.push(newFriend);
+  friendData.push(newFriend);
 
   res.json(newFriend);
 });
