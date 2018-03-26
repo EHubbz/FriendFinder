@@ -34,3 +34,7 @@ module.exports = function(app) {
   res.json(newFriend);
 });
 };
+
+// Because somewhere there is a flaw in the modal code, it does not pop up,
+// and despite console logging, since the modal doesn't present the closest match
+// I can't tell if my math to determine the match is correct.
