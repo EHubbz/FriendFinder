@@ -8,31 +8,29 @@ module.exports = function(app) {
   });
 
  app.post("/api/friends", function(req, res) {
+//store newFriend data
     var newFriend = req.body;
-    var userAnswers = newFriend.answers;
- });
-
-app.post("/api/friends", function(req, res) {
-    var match = req.body;
-    var userScores = match.answers
+    var responses = newFriend.answers;
+//setiing variables to store most compatible match data
     var matchName = "";
     var matchPic = "";
     var totalDifference = 100;
 
-    for (var i = 0; i < friends.length; i++) {
+//multiple attempts at reworking the code and match but can't get calculations to find closest match
+    for (var i = 0; i < friendData.length; i++) {
     	var diff = 0;
-    	for (var j = 0; j < userScores.length; j++) {
-    		diff += Math.abs(friends[i].answers[j] - userScores[j]);
+    	for (var j = 0; j < responses.length; j++) {
+    		diff += Math.abs(friendData[i].answers[j] - responses[j]);
     	} 
     if (diff < totalDifference) {
-    	totalDifference = diff;
-    	matchName = friends[i].name;
-    	matchPic = friends[i].photo;
+    	
+    	matchName = friendData[i].name;
+    	matchPic = friendData[i].photo;
     }
    }
-
+//new friend does get added to the array
   friendData.push(newFriend);
-
+  //newFriend does show up in array on api/friends
   res.json(newFriend);
 });
 };
